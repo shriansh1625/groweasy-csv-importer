@@ -1,5 +1,4 @@
-export const APP_NAME = 'GrowEasy CSV Importer';
-export const GITHUB_URL = 'https://github.com/groweasy';
+export const APP_NAME = 'GrowEasy Import';
 
 export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000';
 

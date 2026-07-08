@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { FileSpreadsheet, Upload, X } from 'lucide-react';
 import {
   Alert,
-  Badge,
   Button,
   Card,
   DropZone,
@@ -15,9 +14,7 @@ import {
 
 import {
   countCsvRows,
-  estimateImportMetrics,
   formatBytes,
-  formatCurrency,
   parseCsvPreview,
 } from '@/services/csv-parser.service';
 import { useImportStore } from '@/stores/import.store';
@@ -57,11 +54,6 @@ export function UploadSection() {
     [handleContent, addToast],
   );
 
-  const metrics =
-    preview && totalRowCount > 0
-      ? estimateImportMetrics(totalRowCount, preview.headers.length)
-      : null;
-
   if (phase !== 'idle' && fileName) {
     return (
       <Card className="animate-fade-in">
@@ -76,12 +68,6 @@ export function UploadSection() {
                 {fileSize !== null ? formatBytes(fileSize) : ''} · {String(totalRowCount)} rows ·{' '}
                 {String(preview?.headers.length ?? 0)} columns
               </p>
-              {metrics && (
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <Badge variant="brand">~{String(metrics.estimatedSeconds)}s import</Badge>
-                  <Badge variant="info">~{formatCurrency(metrics.estimatedCostUsd)} est. cost</Badge>
-                </div>
-              )}
             </div>
           </div>
           {phase === 'ready' && (
@@ -117,8 +103,8 @@ export function UploadSection() {
     <section aria-labelledby="upload-heading">
       <SectionHeader
         id="upload-heading"
-        title="Import CSV"
-        description="Drag and drop, browse, or paste your CSV file to begin AI-powered CRM extraction."
+        title="Upload CSV"
+        description="Drag and drop, browse, or paste your lead export to preview and import into CRM."
       />
       <DropZone onFileSelect={handleFile} onTextPaste={(text) => handleContent(text, 'pasted.csv', text.length)}>
         <motion.div
@@ -133,7 +119,7 @@ export function UploadSection() {
             Drop your CSV here or click to browse
           </p>
           <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-            Supports .csv files · Paste with Ctrl+V · Max 10MB
+            CSV files up to 10MB · Paste with Ctrl+V
           </p>
         </motion.div>
       </DropZone>

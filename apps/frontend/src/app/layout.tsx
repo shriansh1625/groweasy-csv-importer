@@ -8,8 +8,8 @@ import '@/styles/globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'GrowEasy CSV Importer — AI-Powered CRM Data Import',
-  description: 'Transform arbitrary CSV exports into validated CRM records with enterprise AI extraction.',
+  title: 'GrowEasy Import — CRM Lead Import',
+  description: 'Import lead data from any CSV export into structured GrowEasy CRM records.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 import { useCallback, useEffect } from 'react';
 import { Button, ErrorState, LoadingState, useToast } from '@groweasy/ui';
-import { RefreshCw, Sparkles } from 'lucide-react';
+import { ArrowRight, RefreshCw } from 'lucide-react';
 
 import {
   fetchImportResult,
@@ -14,7 +14,7 @@ import {
 } from '@/services/extraction.service';
 import { useImportStore } from '@/stores/import.store';
 
-import { DemoSampleBanner } from './DemoSampleBanner';
+import { SupportedSourcesBanner } from './SupportedSourcesBanner';
 import { ImportProgressPanel } from './ImportProgressPanel';
 import { UploadSection } from './UploadSection';
 
@@ -125,7 +125,7 @@ export function ImportWorkflow() {
 
   return (
     <div className="space-y-10">
-      {phase === 'idle' && <DemoSampleBanner />}
+      {phase === 'idle' && <SupportedSourcesBanner />}
       <UploadSection />
 
       {phase === 'ready' && preview && (
@@ -133,8 +133,8 @@ export function ImportWorkflow() {
           <CsvPreviewTable />
           <div className="flex justify-center">
             <Button size="lg" onClick={() => void runImport()} className="min-w-[200px]">
-              <Sparkles className="h-5 w-5" aria-hidden="true" />
-              Start AI Import
+              <ArrowRight className="h-5 w-5" aria-hidden="true" />
+              Confirm import
             </Button>
           </div>
         </div>
