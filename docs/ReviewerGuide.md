@@ -4,6 +4,20 @@
 
 ---
 
+## Live Demo (Production)
+
+| | URL |
+|---|-----|
+| **App** | https://groweasy-csv-importer-frontend-two.vercel.app |
+| **API health** | https://groweasy-api-7o82.onrender.com/api/v1/health |
+| **GitHub** | https://github.com/shriansh1625/groweasy-csv-importer |
+
+Upload `demo/csvs/01-facebook-leads-standard.csv` on the live app — no local setup required.
+
+> First API request after idle may take ~30s (Render free tier cold start).
+
+---
+
 ## Deployment
 
 See [docs/DEPLOY.md](./DEPLOY.md) for Vercel + Render/Railway setup.
