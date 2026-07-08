@@ -8,7 +8,7 @@ services:
     name: groweasy-api
     runtime: node
     plan: free
-    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm turbo build --filter=@groweasy/backend
+    buildCommand: npm install -g pnpm@9.15.4 && HUSKY=0 pnpm install --frozen-lockfile && pnpm turbo build --filter=@groweasy/backend
     startCommand: node apps/backend/dist/index.js
     healthCheckPath: /api/v1/health
     envVars:
@@ -20,6 +20,8 @@ services:
         value: openrouter
       - key: LOG_LEVEL
         value: info
+      - key: HUSKY
+        value: "0"
       - key: OPENROUTER_MODEL
         value: qwen/qwen-2.5-7b-instruct
       - key: OPENROUTER_BASE_URL
