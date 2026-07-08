@@ -2,6 +2,7 @@ import type {
   ApiResponse,
   ExportFormat,
   ExtractionPipelineResult,
+  HeaderAnalysisResult,
   ImportJobProgress,
   ImportProgressEvent,
   StartImportResponse,
@@ -9,6 +10,31 @@ import type {
 
 import { API_ROUTES } from '@/config/app';
 import type { ImportProgress } from '@/stores/import.store';
+
+export interface CsvAnalyzeResult {
+  totalRows: number;
+  headers: string[];
+  duplicateHeaders: string[];
+  delimiter: string;
+  headerAnalysis: HeaderAnalysisResult;
+}
+
+export async function analyzeCsv(csvContent: string): Promise<CsvAnalyzeResult> {
+  const response = await fetch(API_ROUTES.extractAnalyze, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ csv: csvContent }),
+  });
+
+  const body = (await response.json()) as ApiResponse<CsvAnalyzeResult>;
+
+  if (!response.ok || !body.success || !body.data) {
+    const message = body.error?.message ?? `Failed to analyze CSV (${String(response.status)})`;
+    throw new Error(message);
+  }
+
+  return body.data;
+}
 
 export async function startImport(csvContent: string): Promise<StartImportResponse> {
   const response = await fetch(API_ROUTES.extractStart, {
@@ -48,11 +74,61 @@ export function subscribeToImportEvents(
   };
 
   eventSource.onerror = () => {
-    onError?.(new Error('Connection to import progress stream lost'));
+    onError?.(new Error('SSE connection lost'));
     eventSource.close();
   };
 
   return () => eventSource.close();
+}
+
+/** SSE with polling fallback when the stream drops (e.g. proxy timeout). */
+export function subscribeWithImportFallback(
+  importId: string,
+  onEvent: (event: ImportProgressEvent) => void,
+): () => void {
+  let stopped = false;
+  let pollTimer: ReturnType<typeof setInterval> | undefined;
+
+  const stop = () => {
+    stopped = true;
+    if (pollTimer) clearInterval(pollTimer);
+  };
+
+  const poll = () => {
+    void pollImportStatus(importId)
+      .then((progress) => {
+        if (stopped) return;
+        onEvent({ type: 'progress', progress, timestamp: new Date().toISOString() });
+        if (progress.status === 'completed') {
+          void fetchImportResult(importId).then((result) => {
+            onEvent({ type: 'complete', result, timestamp: new Date().toISOString() });
+          });
+          stop();
+        }
+        if (progress.status === 'failed') {
+          onEvent({
+            type: 'error',
+            error: progress.error ?? 'Import failed',
+            timestamp: new Date().toISOString(),
+          });
+          stop();
+        }
+      })
+      .catch(() => {
+        // Keep polling through transient network errors
+      });
+  };
+
+  const unsub = subscribeToImportEvents(importId, onEvent, () => {
+    if (stopped) return;
+    poll();
+    pollTimer = setInterval(poll, 2000);
+  });
+
+  return () => {
+    stop();
+    unsub();
+  };
 }
 
 export async function pollImportStatus(importId: string): Promise<ImportJobProgress> {

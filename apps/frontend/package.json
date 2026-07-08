@@ -9,7 +9,7 @@
     "start": "next start --port 3000",
     "lint": "next lint",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "vitest run --passWithNoTests",
+    "test": "vitest run",
     "clean": "rimraf .next out"
   },
   "dependencies": {

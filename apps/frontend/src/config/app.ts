@@ -5,6 +5,7 @@ export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost
 export const API_ROUTES = {
   health: `${API_BASE_URL}/api/v1/health`,
   extract: `${API_BASE_URL}/api/v1/extract`,
+  extractAnalyze: `${API_BASE_URL}/api/v1/extract/analyze`,
   extractStart: `${API_BASE_URL}/api/v1/extract/start`,
   extractStatus: (importId: string) => `${API_BASE_URL}/api/v1/extract/${importId}/status`,
   extractResult: (importId: string) => `${API_BASE_URL}/api/v1/extract/${importId}/result`,

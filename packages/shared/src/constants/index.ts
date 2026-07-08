@@ -27,7 +27,7 @@ export const ERROR_CODES = {
   NOT_FOUND: 'NOT_FOUND',
 } as const;
 
-export const LLM_PROVIDERS = ['anthropic', 'openai', 'gemini', 'openrouter'] as const;
+export const LLM_PROVIDERS = ['anthropic', 'openai', 'gemini', 'openrouter', 'mock'] as const;
 
 export const MAX_UPLOAD_SIZE_MB = 10;
 

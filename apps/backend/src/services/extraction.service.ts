@@ -1,5 +1,6 @@
-import { generateId, NotFoundError, UploadError } from '@groweasy/shared';
-import type { CrmRecord, ExtractionPipelineResult, ExportFormat } from '@groweasy/shared';
+import { generateId, NotFoundError, UploadError, ValidationError } from '@groweasy/shared';
+import type { CrmRecord, ExtractionPipelineResult, ExportFormat, HeaderAnalysisResult } from '@groweasy/shared';
+import { extractCsvRequestSchema } from '@groweasy/shared';
 
 import { ExtractionPipeline } from '@/ai/pipeline/extraction.pipeline.js';
 import { createLLMProvider } from '@/ai/providers/index.js';
@@ -18,22 +19,41 @@ export class ExtractionService {
     csvContent: string,
     options?: { llmProvider?: LLMProvider },
   ): Promise<{ importId: string; status: 'pending' }> {
-    validateCsvContent(csvContent, config.upload.maxSizeBytes);
+    const validated = extractCsvRequestSchema.safeParse({ csv: csvContent });
+    if (!validated.success) {
+      throw new ValidationError('Invalid CSV upload', validated.error.flatten());
+    }
+    validateCsvContent(validated.data.csv, config.upload.maxSizeBytes);
 
     const provider = options?.llmProvider ?? createLLMProvider();
     const importId = createImportId();
 
     importJobStore.createJob(
       importId,
-      csvContent,
+      validated.data.csv,
       provider.name as import('@groweasy/shared').LLMProviderName,
       provider.model,
       config.extraction.promptVersion,
     );
 
-    void this.runImportAsync(importId, csvContent, provider);
+    void this.runImportAsync(importId, validated.data.csv, provider);
 
     return { importId, status: 'pending' };
+  }
+
+  analyzeCsv(csvContent: string): {
+    totalRows: number;
+    headers: string[];
+    duplicateHeaders: string[];
+    delimiter: string;
+    headerAnalysis: HeaderAnalysisResult;
+  } {
+    const validated = extractCsvRequestSchema.safeParse({ csv: csvContent });
+    if (!validated.success) {
+      throw new ValidationError('Invalid CSV upload', validated.error.flatten());
+    }
+    validateCsvContent(validated.data.csv, config.upload.maxSizeBytes);
+    return this.pipeline.analyzeHeaders(validated.data.csv);
   }
 
   async extractFromCsv(

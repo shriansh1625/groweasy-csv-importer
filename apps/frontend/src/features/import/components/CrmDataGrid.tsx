@@ -36,10 +36,13 @@ function FieldCell({ field }: { field: FieldConfidence }) {
   if (field.value === null || field.level === 'blank') {
     return <span className="text-slate-400">—</span>;
   }
+  const sourceHint = field.sourceColumn ? `From column: ${field.sourceColumn}` : undefined;
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2" title={sourceHint}>
       <span className="truncate">{field.value}</span>
-      <Badge variant={confidenceVariant(field.confidence)}>{String(field.confidence)}</Badge>
+      <Badge variant={confidenceVariant(field.confidence)} title={sourceHint}>
+        {String(field.confidence)}
+      </Badge>
     </div>
   );
 }

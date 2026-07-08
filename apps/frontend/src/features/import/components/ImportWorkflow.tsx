@@ -10,7 +10,7 @@ import {
   mapJobProgressToStore,
   retryImport,
   startImport,
-  subscribeToImportEvents,
+  subscribeWithImportFallback,
 } from '@/services/extraction.service';
 import { useImportStore } from '@/stores/import.store';
 
@@ -88,9 +88,7 @@ export function ImportWorkflow() {
       const { importId } = await startImport(csvContent);
       setProgress({ importId });
 
-      const unsub = subscribeToImportEvents(importId, handleProgressEvent(importId), (err) => {
-        setError(err.message);
-      });
+      const unsub = subscribeWithImportFallback(importId, handleProgressEvent(importId));
       setUnsubscribe(unsub);
     } catch (err) {
       const message = err instanceof Error ? err.message : 'Import failed';
@@ -111,9 +109,7 @@ export function ImportWorkflow() {
 
     try {
       await retryImport(importId);
-      const unsub = subscribeToImportEvents(importId, handleProgressEvent(importId), (err) => {
-        setError(err.message);
-      });
+      const unsub = subscribeWithImportFallback(importId, handleProgressEvent(importId));
       setUnsubscribe(unsub);
       addToast('Retrying failed rows...', 'info');
     } catch (err) {

@@ -1,7 +1,7 @@
 import Papa from 'papaparse';
 
 import type { ParsedCsvData } from '@groweasy/shared';
-import { CsvParseError } from '@groweasy/shared';
+import { CsvParseError, detectCsvDelimiter } from '@groweasy/shared';
 
 import { stripBom } from '../../security/sanitizer.js';
 import { normalizeText } from '../normalizers/text.normalizer.js';
@@ -15,18 +15,26 @@ export class CsvParser {
 
     const headerCounts = new Map<string, number>();
     const duplicateHeaders: string[] = [];
+    const headerByIndex = new Map<number, string>();
+
+    const delimiter = detectCsvDelimiter(withoutBom);
 
     const result = Papa.parse<Record<string, string>>(withoutBom, {
       header: true,
       skipEmptyLines: true,
+      delimiter,
       transformHeader: (header, index) => {
+        const cached = headerByIndex.get(index);
+        if (cached !== undefined) return cached;
+
         const base = this.normalizeHeader(header, index);
         const key = base.toLowerCase();
         const count = headerCounts.get(key) ?? 0;
         if (count > 0) duplicateHeaders.push(base);
         headerCounts.set(key, count + 1);
-        if (count > 0) return `${base}_${String(count + 1)}`;
-        return base;
+        const finalName = count > 0 ? `${base}_${String(count + 1)}` : base;
+        headerByIndex.set(index, finalName);
+        return finalName;
       },
     });
 

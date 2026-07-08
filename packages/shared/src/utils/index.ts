@@ -34,3 +34,5 @@ export function truncateString(value: string, maxLength: number): string {
 export function bytesToMegabytes(bytes: number): number {
   return bytes / (1024 * 1024);
 }
+
+export { detectCsvDelimiter, delimiterLabel, type CsvDelimiter } from './csv-delimiter.js';

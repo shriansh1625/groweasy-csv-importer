@@ -41,4 +41,16 @@ describe('CsvParser edge cases', () => {
     expect(result.headers).toHaveLength(3);
     expect(result.headers.some((h) => h.startsWith('Name_'))).toBe(true);
   });
+
+  it('handles semicolon-separated European CSV', () => {
+    const result = parser.parse('Name;Email;Phone\nJohn;j@test.com;555');
+    expect(result.headers).toEqual(['Name', 'Email', 'Phone']);
+    expect(result.rows[0]?.[result.headers[1] ?? 'Email']).toBe('j@test.com');
+  });
+
+  it('handles tab-separated CSV', () => {
+    const result = parser.parse('Name\tEmail\nJane\tjane@test.com');
+    expect(result.headers).toEqual(['Name', 'Email']);
+    expect(result.rows[0]?.[result.headers[0] ?? 'Name']).toBe('Jane');
+  });
 });

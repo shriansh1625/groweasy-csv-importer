@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-import type { ExtractionPipelineResult } from '@groweasy/shared';
+import type { ExtractionPipelineResult, HeaderAnalysisResult } from '@groweasy/shared';
 
 import type { ParsedCsvPreview } from '@/services/csv-parser.service';
 
@@ -30,13 +30,22 @@ interface ImportState {
   fileSize: number | null;
   csvContent: string | null;
   preview: ParsedCsvPreview | null;
+  headerAnalysis: HeaderAnalysisResult | null;
+  detectedDelimiter: string | null;
   totalRowCount: number;
   error: string | null;
   progress: ImportProgress;
   result: ExtractionPipelineResult | null;
   unsubscribe: (() => void) | null;
 
-  setFile: (name: string, size: number, content: string, preview: ParsedCsvPreview, totalRows: number) => void;
+  setFile: (
+    name: string,
+    size: number,
+    content: string,
+    preview: ParsedCsvPreview,
+    totalRows: number,
+    analysis?: { headerAnalysis: HeaderAnalysisResult; delimiter: string },
+  ) => void;
   clearFile: () => void;
   setPhase: (phase: ImportPhase) => void;
   setError: (error: string) => void;
@@ -66,19 +75,23 @@ export const useImportStore = create<ImportState>((set, get) => ({
   fileSize: null,
   csvContent: null,
   preview: null,
+  headerAnalysis: null,
+  detectedDelimiter: null,
   totalRowCount: 0,
   error: null,
   progress: initialProgress,
   result: null,
   unsubscribe: null,
 
-  setFile: (name, size, content, preview, totalRows) =>
+  setFile: (name, size, content, preview, totalRows, analysis) =>
     set({
       phase: 'ready',
       fileName: name,
       fileSize: size,
       csvContent: content,
       preview,
+      headerAnalysis: analysis?.headerAnalysis ?? null,
+      detectedDelimiter: analysis?.delimiter ?? preview.delimiter,
       totalRowCount: totalRows,
       error: null,
       result: null,
@@ -92,6 +105,8 @@ export const useImportStore = create<ImportState>((set, get) => ({
       fileSize: null,
       csvContent: null,
       preview: null,
+      headerAnalysis: null,
+      detectedDelimiter: null,
       totalRowCount: 0,
       error: null,
       result: null,
@@ -114,6 +129,8 @@ export const useImportStore = create<ImportState>((set, get) => ({
       fileSize: null,
       csvContent: null,
       preview: null,
+      headerAnalysis: null,
+      detectedDelimiter: null,
       totalRowCount: 0,
       error: null,
       progress: initialProgress,

@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
 
-import { UploadError } from '@groweasy/shared';
+import { UploadError, ValidationError, extractCsvRequestSchema, extractRetryRequestSchema } from '@groweasy/shared';
 import type { ExportFormat } from '@groweasy/shared';
 
 import type { ExtractionService } from '@/services/extraction.service.js';
@@ -38,15 +38,40 @@ export class ExtractionController {
 
   startImport = async (req: Request, res: Response): Promise<void> => {
     const csvContent = this.extractCsvContent(req);
-    if (!csvContent || csvContent.trim().length === 0) {
+    if (!csvContent) {
       throw new UploadError('CSV content is required', undefined, req.requestId);
     }
 
-    const { importId, status } = await this.extractionService.startImport(csvContent);
+    const parsed = extractCsvRequestSchema.safeParse({ csv: csvContent });
+    if (!parsed.success) {
+      throw new ValidationError('Invalid request body', parsed.error.flatten(), req.requestId);
+    }
+
+    const { importId, status } = await this.extractionService.startImport(parsed.data.csv);
 
     res.status(202).json({
       success: true,
       data: { importId, status },
+      meta: { requestId: req.requestId, timestamp: new Date().toISOString() },
+    });
+  };
+
+  analyzeCsv = async (req: Request, res: Response): Promise<void> => {
+    const csvContent = this.extractCsvContent(req);
+    if (!csvContent) {
+      throw new UploadError('CSV content is required', undefined, req.requestId);
+    }
+
+    const parsed = extractCsvRequestSchema.safeParse({ csv: csvContent });
+    if (!parsed.success) {
+      throw new ValidationError('Invalid request body', parsed.error.flatten(), req.requestId);
+    }
+
+    const analysis = this.extractionService.analyzeCsv(parsed.data.csv);
+
+    res.status(200).json({
+      success: true,
+      data: analysis,
       meta: { requestId: req.requestId, timestamp: new Date().toISOString() },
     });
   };
@@ -125,7 +150,12 @@ export class ExtractionController {
     const importId = paramId(req.params['importId']);
 
     const body = req.body as { rowIndices?: number[] } | undefined;
-    const result = await this.extractionService.retryFailedRows(importId, body?.rowIndices);
+    const parsed = extractRetryRequestSchema.safeParse(body ?? {});
+    if (!parsed.success) {
+      throw new ValidationError('Invalid retry request', parsed.error.flatten(), req.requestId);
+    }
+
+    const result = await this.extractionService.retryFailedRows(importId, parsed.data.rowIndices);
 
     res.status(202).json({
       success: true,

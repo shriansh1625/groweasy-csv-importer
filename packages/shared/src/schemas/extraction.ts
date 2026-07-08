@@ -29,7 +29,7 @@ export const importMetricsSchema = z.object({
   importId: z.string(),
   promptVersion: z.string(),
   model: z.string(),
-  provider: z.enum(['anthropic', 'openai', 'gemini']),
+  provider: z.enum(['anthropic', 'openai', 'gemini', 'openrouter', 'mock']),
   startTime: z.string(),
   endTime: z.string(),
   processingDurationMs: z.number(),

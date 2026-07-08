@@ -1,8 +1,9 @@
-import { generateId } from '@groweasy/shared';
+import { generateId, delimiterLabel, detectCsvDelimiter } from '@groweasy/shared';
 import type {
   CrmRecord,
   ExtractionBatch,
   ExtractionPipelineResult,
+  HeaderAnalysisResult,
   ImportProgressStage,
   ValidationWarning,
 } from '@groweasy/shared';
@@ -305,5 +306,23 @@ export class ExtractionPipeline {
         };
       })
       .filter((b): b is ExtractionBatch => b !== null);
+  }
+
+  analyzeHeaders(csvContent: string): {
+    totalRows: number;
+    headers: string[];
+    duplicateHeaders: string[];
+    delimiter: string;
+    headerAnalysis: HeaderAnalysisResult;
+  } {
+    const parsed = this.csvParser.parse(csvContent);
+    const headerAnalysis = this.columnAnalyzer.enrich(this.headerAnalyzer.analyze(parsed.headers));
+    return {
+      totalRows: parsed.totalRows,
+      headers: parsed.headers,
+      duplicateHeaders: parsed.duplicateHeaders ?? [],
+      delimiter: delimiterLabel(detectCsvDelimiter(csvContent)),
+      headerAnalysis,
+    };
   }
 }

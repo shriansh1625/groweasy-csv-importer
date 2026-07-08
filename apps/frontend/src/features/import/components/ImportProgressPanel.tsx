@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { Card, Progress } from '@groweasy/ui';
 
+import { formatCurrency } from '@/services/csv-parser.service';
 import { useImportStore } from '@/stores/import.store';
 
 export function ImportProgressPanel() {
@@ -39,14 +40,27 @@ export function ImportProgressPanel() {
 
         <Progress value={pct} label="Import progress" size="lg" className="mb-6" />
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <Stat label="Rows processed" value={`${String(progress.rowsProcessed)} / ${String(progress.rowsTotal)}`} />
+          {progress.batchTotal > 0 && (
+            <Stat label="Batch progress" value={`${String(progress.batchCurrent)} / ${String(progress.batchTotal)}`} />
+          )}
           {estSecondsRemaining !== undefined ? (
             <Stat label="Rows remaining" value={String(rowsRemaining)} sub={`~${String(estSecondsRemaining)}s left`} />
           ) : (
             <Stat label="Rows remaining" value={String(rowsRemaining)} />
           )}
-          <Stat label="Current stage" value={progress.stageLabel || 'Analyzing columns'} />
+          {progress.rowsPerSecond !== undefined && progress.rowsPerSecond > 0 && (
+            <Stat label="Throughput" value={`${String(progress.rowsPerSecond)} rows/s`} />
+          )}
+          {progress.estimatedTokens > 0 && (
+            <Stat
+              label="Tokens processed"
+              value={progress.estimatedTokens.toLocaleString()}
+              sub={formatCurrency(progress.estimatedCostUsd)}
+            />
+          )}
+          {progress.retries > 0 && <Stat label="Retries" value={String(progress.retries)} />}
         </div>
       </Card>
     </motion.div>

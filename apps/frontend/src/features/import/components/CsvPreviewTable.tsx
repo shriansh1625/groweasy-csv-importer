@@ -5,12 +5,27 @@ import { useVirtualizer } from '@tanstack/react-virtual';
 import { Search } from 'lucide-react';
 import { Badge, Card, Input, SectionHeader, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@groweasy/ui';
 
+import { CRM_FIELD_LABELS } from '@/services/csv-parser.service';
 import { useImportStore } from '@/stores/import.store';
 
 type SortDir = 'asc' | 'desc';
 
+function mappingForHeader(
+  header: string,
+  headerAnalysis: ReturnType<typeof useImportStore.getState>['headerAnalysis'],
+) {
+  const column = headerAnalysis?.columns.find((c) => c.originalHeader === header);
+  if (!column || column.semanticType === 'unknown') return null;
+  return {
+    label: CRM_FIELD_LABELS[column.semanticType] ?? column.semanticType,
+    confidence: column.confidence,
+  };
+}
+
 function CsvPreviewTableInner() {
   const preview = useImportStore((s) => s.preview);
+  const headerAnalysis = useImportStore((s) => s.headerAnalysis);
+  const detectedDelimiter = useImportStore((s) => s.detectedDelimiter);
   const totalRowCount = useImportStore((s) => s.totalRowCount);
   const [search, setSearch] = useState('');
   const [sortCol, setSortCol] = useState<string | null>(null);
@@ -56,16 +71,21 @@ function CsvPreviewTableInner() {
     }
   };
 
+  const mappedCount =
+    headerAnalysis?.columns.filter((c) => c.semanticType !== 'unknown').length ?? 0;
+
   return (
     <section aria-labelledby="preview-heading" className="animate-slide-up">
       <SectionHeader
         id="preview-heading"
-        title="CSV Preview"
-        description={`Showing first ${String(preview.rows.length)} of ${String(totalRowCount)} rows`}
+        title="Data preview"
+        description={`Review ${String(totalRowCount)} rows before import${detectedDelimiter ? ` · ${detectedDelimiter} delimiter` : ''}`}
         action={
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <Badge variant="default">{String(preview.headers.length)} columns</Badge>
-            <Badge variant="brand">{String(totalRowCount)} rows</Badge>
+            {headerAnalysis && (
+              <Badge variant="brand">{String(mappedCount)} mapped to CRM</Badge>
+            )}
           </div>
         }
       />
@@ -89,19 +109,27 @@ function CsvPreviewTableInner() {
             <TableHeader>
               <TableRow>
                 <TableHead className="sticky left-0 z-20 bg-slate-50 dark:bg-slate-900">#</TableHead>
-                {preview.headers.map((header) => (
-                  <TableHead key={header}>
-                    <button
-                      type="button"
-                      onClick={() => toggleSort(header)}
-                      className="flex items-center gap-1 hover:text-brand-600"
-                      aria-label={`Sort by ${header}`}
-                    >
-                      {header}
-                      {sortCol === header && (sortDir === 'asc' ? ' ↑' : ' ↓')}
-                    </button>
-                  </TableHead>
-                ))}
+                {preview.headers.map((header) => {
+                  const mapping = mappingForHeader(header, headerAnalysis);
+                  return (
+                    <TableHead key={header} className="min-w-[140px]">
+                      <button
+                        type="button"
+                        onClick={() => toggleSort(header)}
+                        className="flex w-full flex-col items-start gap-1 text-left hover:text-brand-600"
+                        aria-label={`Sort by ${header}`}
+                      >
+                        <span className="truncate font-medium">{header}</span>
+                        {mapping && (
+                          <Badge variant={mapping.confidence >= 80 ? 'success' : 'warning'} className="text-[10px]">
+                            → {mapping.label} ({String(mapping.confidence)}%)
+                          </Badge>
+                        )}
+                        {sortCol === header && (sortDir === 'asc' ? ' ↑' : ' ↓')}
+                      </button>
+                    </TableHead>
+                  );
+                })}
               </TableRow>
             </TableHeader>
             <TableBody

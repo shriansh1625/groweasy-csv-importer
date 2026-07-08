@@ -1,10 +1,14 @@
-# GrowEasy CSV Importer
+# GrowEasy Import
 
-> **AI-powered CSV → CRM extraction pipeline** — upload messy exports from Facebook, Google Ads, Excel, or any CRM and get structured records with confidence scores.
+> **AI-powered CSV → CRM extraction** for GrowEasy's internship assignment — upload messy exports from Facebook, Google Ads, Excel, or any CRM and get structured records with confidence scores.
 
 [![Node.js](https://img.shields.io/badge/Node.js-20+-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![pnpm](https://img.shields.io/badge/pnpm-9+-F69220?logo=pnpm&logoColor=white)](https://pnpm.io/)
+[![Tests](https://img.shields.io/badge/tests-80%2B-brightgreen)](./docs/ASSIGNMENT.md)
+[![Docker](https://img.shields.io/badge/docker-ready-2496ED?logo=docker&logoColor=white)](./docker-compose.yml)
+
+> **Assignment rubric mapping:** See [`docs/ASSIGNMENT.md`](docs/ASSIGNMENT.md) for how each evaluation criterion is implemented.
 
 ---
 
@@ -23,7 +27,7 @@ pnpm dev
 | Frontend | http://localhost:3000 |
 | Backend  | http://localhost:4000/api/v1/health |
 
-**Try it:** Upload `demo/csvs/01-facebook-leads-standard.csv` → click **Start AI Import** → watch live progress → inspect CRM results.
+**Try it:** Upload `demo/csvs/01-facebook-leads-standard.csv` → review column mapping in preview → **Confirm import** → inspect CRM results.
 
 > **Free AI by default.** Set `LLM_PROVIDER=openrouter` with a free [OpenRouter](https://openrouter.ai) key and `qwen/qwen-2.5-7b-instruct`. Use `mock` for offline demo without any API key.
 
@@ -235,25 +239,33 @@ NEXT_PUBLIC_API_URL=https://your-api.onrender.com
 ```bash
 pnpm dev             # Start frontend (:3000) + backend (:4000)
 pnpm build           # Production build
-pnpm test            # Run all tests (53+ backend tests)
+pnpm test            # Run all tests (80+ across monorepo)
 pnpm demo:validate   # Validate all 26 demo CSVs
 pnpm demo:report     # Generate performance report
 ```
 
 ---
 
-## Deployment
+## Docker
 
-### Backend
+```bash
+cp .env.example .env   # add your LLM API key
+docker compose up --build
+```
+
+| Service | URL |
+|---------|-----|
+| Frontend | http://localhost:3000 |
+| Backend | http://localhost:4000/api/v1/health |
+
+---
+
+## Manual Production Build
 
 ```bash
 pnpm --filter @groweasy/backend build
-NODE_ENV=production LLM_PROVIDER=anthropic ANTHROPIC_API_KEY=... node apps/backend/dist/index.js
-```
+NODE_ENV=production LLM_PROVIDER=openrouter OPENROUTER_API_KEY=... node apps/backend/dist/index.js
 
-### Frontend
-
-```bash
 pnpm --filter @groweasy/frontend build
 NEXT_PUBLIC_API_URL=https://your-api.example.com pnpm --filter @groweasy/frontend start
 ```
@@ -269,6 +281,8 @@ Base URL: `http://localhost:4000/api/v1`
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/health` | Health check |
+| `POST` | `/extract/analyze` | Header mapping preview `{ csv }` → column semantics |
+| `POST` | `/extract/analyze` | Preview column mapping `{ csv: string }` → header analysis |
 | `POST` | `/extract/start` | Start async import `{ csv: string }` → `202 { importId }` |
 | `GET` | `/extract/:id/events` | SSE progress stream |
 | `GET` | `/extract/:id/status` | Job status |

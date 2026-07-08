@@ -21,6 +21,7 @@ healthRouter.get('/', healthController.check);
 extractionRouter.post('/', asyncHandler(extractionController.extract));
 
 // Production async import workflow
+extractionRouter.post('/analyze', asyncHandler(extractionController.analyzeCsv));
 extractionRouter.post('/start', asyncHandler(extractionController.startImport));
 extractionRouter.get('/:importId/status', asyncHandler(extractionController.getStatus));
 extractionRouter.get('/:importId/result', asyncHandler(extractionController.getResult));

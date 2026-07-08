@@ -17,6 +17,7 @@ import {
   formatBytes,
   parseCsvPreview,
 } from '@/services/csv-parser.service';
+import { analyzeCsv } from '@/services/extraction.service';
 import { useImportStore } from '@/stores/import.store';
 import { PREVIEW_ROW_LIMIT, MAX_UPLOAD_SIZE_BYTES } from '@/config/app';
 
@@ -30,6 +31,17 @@ export function UploadSection() {
       const previewData = parseCsvPreview(content, PREVIEW_ROW_LIMIT);
       const totalRows = countCsvRows(content);
       setFile(name, size, content, previewData, totalRows);
+
+      void analyzeCsv(content)
+        .then((analysis) => {
+          setFile(name, size, content, previewData, totalRows, {
+            headerAnalysis: analysis.headerAnalysis,
+            delimiter: analysis.delimiter,
+          });
+        })
+        .catch(() => {
+          // Preview still works without server-side header analysis
+        });
     },
     [setFile],
   );

@@ -27,6 +27,6 @@ services:
       - key: OPENROUTER_BASE_URL
         value: https://openrouter.ai/api/v1
       - key: OPENROUTER_APP_NAME
-        value: Civic Seva
+        value: GrowEasy Import
       - key: CORS_ORIGIN
         value: https://groweasy-csv-importer.vercel.app,*.vercel.app

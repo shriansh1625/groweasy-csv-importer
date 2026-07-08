@@ -33,3 +33,4 @@ export type LLMCompletionRequestInput = z.infer<typeof llmCompletionRequestSchem
 
 export * from './crm.js';
 export * from './extraction.js';
+export * from './api.js';

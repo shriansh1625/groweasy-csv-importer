@@ -33,7 +33,7 @@ const envSchema = z
     OPENROUTER_API_KEY: z.string().optional(),
     OPENROUTER_MODEL: z.string().default('qwen/qwen-2.5-7b-instruct'),
     OPENROUTER_BASE_URL: z.string().default('https://openrouter.ai/api/v1'),
-    OPENROUTER_APP_NAME: z.string().default('Civic Seva'),
+    OPENROUTER_APP_NAME: z.string().default('GrowEasy Import'),
     OPENROUTER_SITE_URL: z.string().optional(),
 
     RATE_LIMIT_WINDOW_MS: z.coerce.number().int().positive().default(60_000),
