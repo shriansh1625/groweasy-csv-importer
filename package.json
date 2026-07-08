@@ -23,7 +23,7 @@
     "demo:realworld": "node scripts/generate-realworld-csvs.mjs",
     "demo:validate": "pnpm --filter @groweasy/backend exec vitest run src/demo/demo-validation.test.ts",
     "demo:report": "pnpm --filter @groweasy/backend exec vitest run src/demo/demo-performance.test.ts",
-    "prepare": "husky"
+    "prepare": "node scripts/husky-prepare.mjs"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
