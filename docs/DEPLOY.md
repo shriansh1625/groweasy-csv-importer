@@ -18,10 +18,10 @@ Vercel (Frontend)  ──HTTPS──▶  Render/Railway (Backend API)
 1. Push this repo to GitHub
 2. Go to [Render Dashboard](https://dashboard.render.com) → **New** → **Blueprint**
 3. Connect repo — Render reads `render.yaml`
-4. Set environment variables:
-   - `CORS_ORIGIN` = `https://your-app.vercel.app,*.vercel.app`
-   - `LLM_PROVIDER` = `mock` (no API key) or `anthropic` + `ANTHROPIC_API_KEY`
-5. Deploy → note URL: `https://groweasy-api.onrender.com`
+4. Click **Deploy Blueprint** — no manual env form (all values pre-set in `render.yaml`)
+5. After deploy, open **groweasy-api → Environment** and add:
+   - `OPENROUTER_API_KEY` = your key from [openrouter.ai/keys](https://openrouter.ai/keys)
+6. Redeploy → note URL: `https://groweasy-api.onrender.com`
 
 ### Option B: Railway
 
@@ -92,9 +92,12 @@ Redeploy backend after changing CORS.
 | `NODE_ENV` | Yes | `production` |
 | `PORT` | Auto-set | `4000` |
 | `HOST` | Yes | `0.0.0.0` |
-| `CORS_ORIGIN` | Yes | `https://app.vercel.app,*.vercel.app` |
-| `LLM_PROVIDER` | Yes | `mock` or `anthropic` |
-| `ANTHROPIC_API_KEY` | If anthropic | `sk-ant-...` |
+| `CORS_ORIGIN` | Yes | `https://groweasy-csv-importer.vercel.app,*.vercel.app` |
+| `LLM_PROVIDER` | Yes | `openrouter` |
+| `OPENROUTER_API_KEY` | Yes (add in dashboard) | `sk-or-v1-...` |
+| `OPENROUTER_MODEL` | Yes | `qwen/qwen-2.5-7b-instruct` |
+| `OPENROUTER_BASE_URL` | Yes | `https://openrouter.ai/api/v1` |
+| `OPENROUTER_APP_NAME` | No | `Civic Seva` |
 | `MAX_UPLOAD_SIZE_MB` | No | `10` |
 
 ### Frontend (Vercel)

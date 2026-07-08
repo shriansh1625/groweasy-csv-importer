@@ -1,5 +1,8 @@
 # Render Blueprint — Backend API
 # Deploy: connect repo at https://dashboard.render.com → New Blueprint
+#
+# After deploy: add OPENROUTER_API_KEY in Render Dashboard → groweasy-api → Environment
+# (never commit API keys to this file)
 services:
   - type: web
     name: groweasy-api
@@ -17,8 +20,6 @@ services:
         value: openrouter
       - key: LOG_LEVEL
         value: info
-      - key: OPENROUTER_API_KEY
-        sync: false
       - key: OPENROUTER_MODEL
         value: qwen/qwen-2.5-7b-instruct
       - key: OPENROUTER_BASE_URL
@@ -26,10 +27,4 @@ services:
       - key: OPENROUTER_APP_NAME
         value: Civic Seva
       - key: CORS_ORIGIN
-        sync: false
-      - key: ANTHROPIC_API_KEY
-        sync: false
-      - key: OPENAI_API_KEY
-        sync: false
-      - key: GEMINI_API_KEY
-        sync: false
+        value: https://groweasy-csv-importer.vercel.app,*.vercel.app
