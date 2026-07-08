@@ -18,10 +18,9 @@ Vercel (Frontend)  ──HTTPS──▶  Render/Railway (Backend API)
 1. Push this repo to GitHub
 2. Go to [Render Dashboard](https://dashboard.render.com) → **New** → **Blueprint**
 3. Connect repo — Render reads `render.yaml`
-4. Click **Deploy Blueprint** — you will be prompted for **`OPENROUTER_API_KEY`** only (paste your key from [openrouter.ai/keys](https://openrouter.ai/keys))
-5. Deploy → note URL: `https://groweasy-api.onrender.com`
-
-> **Service already created?** Go to **groweasy-api → Environment → Add Environment Variable** → Key: `OPENROUTER_API_KEY`, Value: your `sk-or-v1-...` key → **Save Changes** (auto-redeploys).
+4. Click **Deploy Blueprint** — no secrets required; app starts with demo LLM
+5. Optional: add `OPENROUTER_API_KEY` in **groweasy-api → Environment** to enable free Qwen via OpenRouter
+6. Deploy → note URL: `https://groweasy-api.onrender.com`
 
 ### Option B: Railway
 

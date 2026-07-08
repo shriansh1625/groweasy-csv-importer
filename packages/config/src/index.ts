@@ -48,30 +48,6 @@ const envSchema = z
     LLM_REQUEST_TIMEOUT_MS: z.coerce.number().int().positive().default(120_000),
     LLM_MAX_CONCURRENT_BATCHES: z.coerce.number().int().min(1).max(10).default(3),
     IMPORT_JOB_TTL_MS: z.coerce.number().int().positive().default(3_600_000),
-  })
-  .superRefine((env, ctx) => {
-    if (env.NODE_ENV === 'test') {
-      return;
-    }
-
-    if (env.LLM_PROVIDER === 'mock') {
-      return;
-    }
-
-    const missingKey =
-      (env.LLM_PROVIDER === 'anthropic' && !env.ANTHROPIC_API_KEY && 'ANTHROPIC_API_KEY') ||
-      (env.LLM_PROVIDER === 'openai' && !env.OPENAI_API_KEY && 'OPENAI_API_KEY') ||
-      (env.LLM_PROVIDER === 'gemini' && !env.GEMINI_API_KEY && 'GEMINI_API_KEY') ||
-      (env.LLM_PROVIDER === 'openrouter' && !env.OPENROUTER_API_KEY && 'OPENROUTER_API_KEY') ||
-      false;
-
-    if (missingKey) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: `${missingKey} is required when LLM_PROVIDER is "${env.LLM_PROVIDER}"`,
-        path: [missingKey],
-      });
-    }
   });
 
 export type EnvConfig = z.infer<typeof envSchema>;

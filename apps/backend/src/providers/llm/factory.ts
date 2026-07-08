@@ -50,7 +50,10 @@ export function createLLMProvider(): LLMProvider {
     }
     case 'openrouter': {
       if (!llmConfig.openrouter.apiKey) {
-        throw new ConfigurationError('OPENROUTER_API_KEY is required');
+        console.warn(
+          '[groweasy] OPENROUTER_API_KEY is not set — using demo LLM. Add the key in Render Environment to enable Qwen.',
+        );
+        return new DemoLLMProvider();
       }
       const openRouterOptions = {
         apiKey: llmConfig.openrouter.apiKey,
