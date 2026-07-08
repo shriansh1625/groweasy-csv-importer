@@ -1,0 +1,15 @@
+[build]
+builder = "NIXPACKS"
+buildCommand = "pnpm install --frozen-lockfile && pnpm turbo build --filter=@groweasy/backend"
+
+[deploy]
+startCommand = "node apps/backend/dist/index.js"
+healthcheckPath = "/api/v1/health"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+
+[env]
+NODE_ENV = "production"
+HOST = "0.0.0.0"
+LLM_PROVIDER = "mock"
+LOG_LEVEL = "info"

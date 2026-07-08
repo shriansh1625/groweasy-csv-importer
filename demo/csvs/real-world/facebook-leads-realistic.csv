@@ -1,0 +1,4 @@
+id,created_time,ad_name,adset_name,campaign_name,form_name,is_organic,platform,full_name,email,phone_number,city,state,country
+l:123,2024-06-01 08:12:34,Summer Promo,Lookalike 1%,Q2 Leads,Meridian Tower Form,false,fb,John Doe,john@gmail.com,+1 555-4001,Austin,TX,US
+l:124,2024-06-02 14:22:11,Retargeting,Website Visitors,Q2 Leads,Meridian Tower Form,false,fb,Jane Smith,jane@yahoo.com,5554002,Dallas,TX,US
+l:125,2024-06-03 09:05:00,Brand Awareness,Broad,Q2 Leads,Eden Park Form,true,fb,Carlos Ruiz,carlos@email.com,+52 55 1234 5678,CDMX,CMX,MX

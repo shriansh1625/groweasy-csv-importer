@@ -1,0 +1,4 @@
+Lead ID,FirstName,LastName,Email,Phone,Company,LeadSource,Status,OwnerId
+00Q1,John,Doe,john@sfdc.com,555-3001,Acme Corp,Web,Open - Not Contacted,005xx
+00Q2,Jane,Smith,jane@sfdc.com,555-3002,Beta LLC,Partner Referral,Working - Contacted,005xy
+00Q3,,Unknown,invalid,,Gamma Inc,Cold Call,Closed - Not Converted,005xx

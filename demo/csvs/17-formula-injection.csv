@@ -1,0 +1,6 @@
+Name,Email,Phone,Notes
+=SUM(A1:A10),normal@test.com,5551000,Normal row
++1234567890,plus@test.com,5551001,Phone starts with plus
+-100,minus@test.com,5551002,Negative value
+@SUM(A1),at@test.com,5551003,At prefix
+Normal User,normal2@test.com,5551004,Clean row

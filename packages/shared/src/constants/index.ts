@@ -1,0 +1,38 @@
+export const APP_NAME = 'groweasy-csv-importer' as const;
+
+export const HTTP_STATUS = {
+  OK: 200,
+  CREATED: 201,
+  ACCEPTED: 202,
+  NO_CONTENT: 204,
+  BAD_REQUEST: 400,
+  UNAUTHORIZED: 401,
+  FORBIDDEN: 403,
+  NOT_FOUND: 404,
+  CONFLICT: 409,
+  UNPROCESSABLE_ENTITY: 422,
+  TOO_MANY_REQUESTS: 429,
+  INTERNAL_SERVER_ERROR: 500,
+  SERVICE_UNAVAILABLE: 503,
+} as const;
+
+export const ERROR_CODES = {
+  VALIDATION_ERROR: 'VALIDATION_ERROR',
+  CSV_PARSE_ERROR: 'CSV_PARSE_ERROR',
+  AI_PROVIDER_ERROR: 'AI_PROVIDER_ERROR',
+  CONFIGURATION_ERROR: 'CONFIGURATION_ERROR',
+  UPLOAD_ERROR: 'UPLOAD_ERROR',
+  RATE_LIMIT_ERROR: 'RATE_LIMIT_ERROR',
+  INTERNAL_ERROR: 'INTERNAL_ERROR',
+  NOT_FOUND: 'NOT_FOUND',
+} as const;
+
+export const LLM_PROVIDERS = ['anthropic', 'openai', 'gemini'] as const;
+
+export const MAX_UPLOAD_SIZE_MB = 10;
+
+export const DEFAULT_PAGE_SIZE = 50;
+
+export const REQUEST_ID_HEADER = 'x-request-id' as const;
+
+export const BATCH_ID_HEADER = 'x-batch-id' as const;

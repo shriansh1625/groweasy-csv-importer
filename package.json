@@ -1,0 +1,43 @@
+{
+  "name": "groweasy-csv-importer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Production-grade CSV importer monorepo for GrowEasy",
+  "license": "MIT",
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,yml,yaml}\"",
+    "clean": "turbo run clean && node scripts/clean.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "demo:generate": "node scripts/generate-demo-csvs.mjs",
+    "demo:realworld": "node scripts/generate-realworld-csvs.mjs",
+    "demo:validate": "pnpm --filter @groweasy/backend exec vitest run src/demo/demo-validation.test.ts",
+    "demo:report": "pnpm --filter @groweasy/backend exec vitest run src/demo/demo-performance.test.ts",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^9.28.0",
+    "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-import": "^2.31.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.12",
+    "turbo": "^2.5.4",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.34.0"
+  }
+}

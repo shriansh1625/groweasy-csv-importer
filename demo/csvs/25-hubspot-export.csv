@@ -1,0 +1,4 @@
+Record ID,First Name,Last Name,Email,Phone Number,Lead Status,Lifecycle Stage,Original Source
+10001,Emma,Watson,emma@hub.com,+1 555-1600,NEW,lead,ORGANIC_SEARCH
+10002,Daniel,Radcliffe,daniel@hub.com,+1 555-1601,OPEN,lead,PAID_SEARCH
+10003,Rupert,Grint,rupert@hub.com,,IN_PROGRESS,lead,SOCIAL_MEDIA

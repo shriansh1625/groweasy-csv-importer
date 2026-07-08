@@ -1,0 +1,201 @@
+Name,Email,Phone,Company,City,Lead Owner,Status,Source
+James Smith,james.smith0@demo.com,5552000,Company 0,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson1@demo.com,5552001,Company 1,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams2@demo.com,5552002,Company 2,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown3@demo.com,5552003,Company 3,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones4@demo.com,5552004,Company 4,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia5@demo.com,5552005,Company 5,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller6@demo.com,5552006,Company 6,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis7@demo.com,5552007,Company 7,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith8@demo.com,5552008,Company 8,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson9@demo.com,5552009,Company 9,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams10@demo.com,5552010,Company 10,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown11@demo.com,5552011,Company 11,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones12@demo.com,5552012,Company 12,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia13@demo.com,5552013,Company 13,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller14@demo.com,5552014,Company 14,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis15@demo.com,5552015,Company 15,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith16@demo.com,5552016,Company 16,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson17@demo.com,5552017,Company 17,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams18@demo.com,5552018,Company 18,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown19@demo.com,5552019,Company 19,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones20@demo.com,5552020,Company 0,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia21@demo.com,5552021,Company 1,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller22@demo.com,5552022,Company 2,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis23@demo.com,5552023,Company 3,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith24@demo.com,5552024,Company 4,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson25@demo.com,5552025,Company 5,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams26@demo.com,5552026,Company 6,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown27@demo.com,5552027,Company 7,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones28@demo.com,5552028,Company 8,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia29@demo.com,5552029,Company 9,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller30@demo.com,5552030,Company 10,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis31@demo.com,5552031,Company 11,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith32@demo.com,5552032,Company 12,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson33@demo.com,5552033,Company 13,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams34@demo.com,5552034,Company 14,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown35@demo.com,5552035,Company 15,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones36@demo.com,5552036,Company 16,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia37@demo.com,5552037,Company 17,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller38@demo.com,5552038,Company 18,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis39@demo.com,5552039,Company 19,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith40@demo.com,5552040,Company 0,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson41@demo.com,5552041,Company 1,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams42@demo.com,5552042,Company 2,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown43@demo.com,5552043,Company 3,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones44@demo.com,5552044,Company 4,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia45@demo.com,5552045,Company 5,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller46@demo.com,5552046,Company 6,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis47@demo.com,5552047,Company 7,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith48@demo.com,5552048,Company 8,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson49@demo.com,5552049,Company 9,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams50@demo.com,5552050,Company 10,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown51@demo.com,5552051,Company 11,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones52@demo.com,5552052,Company 12,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia53@demo.com,5552053,Company 13,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller54@demo.com,5552054,Company 14,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis55@demo.com,5552055,Company 15,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith56@demo.com,5552056,Company 16,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson57@demo.com,5552057,Company 17,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams58@demo.com,5552058,Company 18,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown59@demo.com,5552059,Company 19,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones60@demo.com,5552060,Company 0,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia61@demo.com,5552061,Company 1,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller62@demo.com,5552062,Company 2,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis63@demo.com,5552063,Company 3,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith64@demo.com,5552064,Company 4,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson65@demo.com,5552065,Company 5,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams66@demo.com,5552066,Company 6,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown67@demo.com,5552067,Company 7,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones68@demo.com,5552068,Company 8,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia69@demo.com,5552069,Company 9,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller70@demo.com,5552070,Company 10,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis71@demo.com,5552071,Company 11,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith72@demo.com,5552072,Company 12,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson73@demo.com,5552073,Company 13,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams74@demo.com,5552074,Company 14,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown75@demo.com,5552075,Company 15,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones76@demo.com,5552076,Company 16,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia77@demo.com,5552077,Company 17,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller78@demo.com,5552078,Company 18,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis79@demo.com,5552079,Company 19,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith80@demo.com,5552080,Company 0,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson81@demo.com,5552081,Company 1,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams82@demo.com,5552082,Company 2,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown83@demo.com,5552083,Company 3,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones84@demo.com,5552084,Company 4,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia85@demo.com,5552085,Company 5,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller86@demo.com,5552086,Company 6,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis87@demo.com,5552087,Company 7,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith88@demo.com,5552088,Company 8,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson89@demo.com,5552089,Company 9,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams90@demo.com,5552090,Company 10,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown91@demo.com,5552091,Company 11,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones92@demo.com,5552092,Company 12,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia93@demo.com,5552093,Company 13,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller94@demo.com,5552094,Company 14,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis95@demo.com,5552095,Company 15,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith96@demo.com,5552096,Company 16,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson97@demo.com,5552097,Company 17,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams98@demo.com,5552098,Company 18,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown99@demo.com,5552099,Company 19,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones100@demo.com,5552100,Company 0,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia101@demo.com,5552101,Company 1,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller102@demo.com,5552102,Company 2,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis103@demo.com,5552103,Company 3,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith104@demo.com,5552104,Company 4,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson105@demo.com,5552105,Company 5,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams106@demo.com,5552106,Company 6,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown107@demo.com,5552107,Company 7,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones108@demo.com,5552108,Company 8,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia109@demo.com,5552109,Company 9,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller110@demo.com,5552110,Company 10,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis111@demo.com,5552111,Company 11,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith112@demo.com,5552112,Company 12,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson113@demo.com,5552113,Company 13,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams114@demo.com,5552114,Company 14,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown115@demo.com,5552115,Company 15,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones116@demo.com,5552116,Company 16,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia117@demo.com,5552117,Company 17,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller118@demo.com,5552118,Company 18,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis119@demo.com,5552119,Company 19,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith120@demo.com,5552120,Company 0,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson121@demo.com,5552121,Company 1,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams122@demo.com,5552122,Company 2,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown123@demo.com,5552123,Company 3,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones124@demo.com,5552124,Company 4,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia125@demo.com,5552125,Company 5,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller126@demo.com,5552126,Company 6,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis127@demo.com,5552127,Company 7,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith128@demo.com,5552128,Company 8,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson129@demo.com,5552129,Company 9,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams130@demo.com,5552130,Company 10,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown131@demo.com,5552131,Company 11,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones132@demo.com,5552132,Company 12,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia133@demo.com,5552133,Company 13,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller134@demo.com,5552134,Company 14,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis135@demo.com,5552135,Company 15,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith136@demo.com,5552136,Company 16,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson137@demo.com,5552137,Company 17,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams138@demo.com,5552138,Company 18,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown139@demo.com,5552139,Company 19,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones140@demo.com,5552140,Company 0,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia141@demo.com,5552141,Company 1,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller142@demo.com,5552142,Company 2,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis143@demo.com,5552143,Company 3,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith144@demo.com,5552144,Company 4,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson145@demo.com,5552145,Company 5,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams146@demo.com,5552146,Company 6,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown147@demo.com,5552147,Company 7,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones148@demo.com,5552148,Company 8,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia149@demo.com,5552149,Company 9,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller150@demo.com,5552150,Company 10,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis151@demo.com,5552151,Company 11,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith152@demo.com,5552152,Company 12,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson153@demo.com,5552153,Company 13,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams154@demo.com,5552154,Company 14,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown155@demo.com,5552155,Company 15,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones156@demo.com,5552156,Company 16,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia157@demo.com,5552157,Company 17,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller158@demo.com,5552158,Company 18,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis159@demo.com,5552159,Company 19,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith160@demo.com,5552160,Company 0,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson161@demo.com,5552161,Company 1,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams162@demo.com,5552162,Company 2,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown163@demo.com,5552163,Company 3,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones164@demo.com,5552164,Company 4,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia165@demo.com,5552165,Company 5,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller166@demo.com,5552166,Company 6,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis167@demo.com,5552167,Company 7,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith168@demo.com,5552168,Company 8,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson169@demo.com,5552169,Company 9,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams170@demo.com,5552170,Company 10,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown171@demo.com,5552171,Company 11,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones172@demo.com,5552172,Company 12,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia173@demo.com,5552173,Company 13,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller174@demo.com,5552174,Company 14,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis175@demo.com,5552175,Company 15,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith176@demo.com,5552176,Company 16,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson177@demo.com,5552177,Company 17,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams178@demo.com,5552178,Company 18,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown179@demo.com,5552179,Company 19,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones180@demo.com,5552180,Company 0,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia181@demo.com,5552181,Company 1,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller182@demo.com,5552182,Company 2,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis183@demo.com,5552183,Company 3,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith184@demo.com,5552184,Company 4,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson185@demo.com,5552185,Company 5,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams186@demo.com,5552186,Company 6,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown187@demo.com,5552187,Company 7,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones188@demo.com,5552188,Company 8,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia189@demo.com,5552189,Company 9,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller190@demo.com,5552190,Company 10,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis191@demo.com,5552191,Company 11,Ahmedabad,Anita Rao,SALE_DONE,Walk-in
+James Smith,james.smith192@demo.com,5552192,Company 12,Mumbai,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Mary Johnson,mary.johnson193@demo.com,5552193,Company 13,Delhi,Amit Patel,DID_NOT_CONNECT,Google Ads
+Robert Williams,robert.williams194@demo.com,5552194,Company 14,Bangalore,Rahul Mehta,BAD_LEAD,Referral
+Patricia Brown,patricia.brown195@demo.com,5552195,Company 15,Chennai,Anita Rao,SALE_DONE,Walk-in
+Michael Jones,michael.jones196@demo.com,5552196,Company 16,Hyderabad,Priya Sharma,GOOD_LEAD_FOLLOW_UP,Facebook Ads
+Jennifer Garcia,jennifer.garcia197@demo.com,5552197,Company 17,Pune,Amit Patel,DID_NOT_CONNECT,Google Ads
+David Miller,david.miller198@demo.com,5552198,Company 18,Kolkata,Rahul Mehta,BAD_LEAD,Referral
+Linda Davis,linda.davis199@demo.com,5552199,Company 19,Ahmedabad,Anita Rao,SALE_DONE,Walk-in

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" rx="12" fill="#F8FAFC"/>
+  <text x="100" y="60" fill="#0F172A" font-size="22" font-weight="bold" font-family="system-ui">Import complete</text>
+  <text x="100" y="85" fill="#64748B" font-size="13" font-family="system-ui">Processed 200 rows with anthropic · Prompt v2</text>
+  <rect x="100" y="110" width="110" height="80" rx="12" fill="white" stroke="#E2E8F0"/>
+  <text x="155" y="150" text-anchor="middle" fill="#F97316" font-size="20" font-weight="bold" font-family="system-ui">200</text>
+  <text x="155" y="170" text-anchor="middle" fill="#64748B" font-size="10" font-family="system-ui">IMPORTED</text>
+  <rect x="230" y="110" width="110" height="80" rx="12" fill="white" stroke="#E2E8F0"/>
+  <text x="285" y="150" text-anchor="middle" fill="#D97706" font-size="20" font-weight="bold" font-family="system-ui">0</text>
+  <text x="285" y="170" text-anchor="middle" fill="#64748B" font-size="10" font-family="system-ui">SKIPPED</text>
+  <rect x="360" y="110" width="110" height="80" rx="12" fill="white" stroke="#E2E8F0"/>
+  <text x="415" y="150" text-anchor="middle" fill="#059669" font-size="20" font-weight="bold" font-family="system-ui">$0.07</text>
+  <text x="415" y="170" text-anchor="middle" fill="#64748B" font-size="10" font-family="system-ui">EST. COST</text>
+  <rect x="490" y="110" width="110" height="80" rx="12" fill="white" stroke="#E2E8F0"/>
+  <text x="545" y="150" text-anchor="middle" fill="#F97316" font-size="20" font-weight="bold" font-family="system-ui">87%</text>
+  <text x="545" y="170" text-anchor="middle" fill="#64748B" font-size="10" font-family="system-ui">CONFIDENCE</text>
+  <rect x="100" y="220" width="600" height="200" rx="12" fill="white" stroke="#E2E8F0"/>
+  <text x="120" y="250" fill="#64748B" font-size="11" font-weight="600" font-family="system-ui">NAME</text>
+  <text x="280" y="250" fill="#64748B" font-size="11" font-weight="600" font-family="system-ui">EMAIL</text>
+  <text x="480" y="250" fill="#64748B" font-size="11" font-weight="600" font-family="system-ui">CONFIDENCE</text>
+  <line x1="120" y1="260" x2="680" y2="260" stroke="#E2E8F0"/>
+  <text x="120" y="285" fill="#0F172A" font-size="13" font-family="system-ui">John Doe</text>
+  <text x="280" y="285" fill="#0F172A" font-size="13" font-family="system-ui">john@example.com</text>
+  <rect x="480" y="272" width="36" height="18" rx="4" fill="#DCFCE7"/>
+  <text x="498" y="285" text-anchor="middle" fill="#166534" font-size="10" font-family="system-ui">95</text>
+  <text x="120" y="315" fill="#0F172A" font-size="13" font-family="system-ui">Jane Smith</text>
+  <text x="280" y="315" fill="#0F172A" font-size="13" font-family="system-ui">jane@example.com</text>
+  <rect x="480" y="302" width="36" height="18" rx="4" fill="#DCFCE7"/>
+  <text x="498" y="315" text-anchor="middle" fill="#166534" font-size="10" font-family="system-ui">98</text>
+</svg>

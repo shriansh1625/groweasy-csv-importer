@@ -1,0 +1,4 @@
+Created Time,Full Name,Email Address,Phone,Ad Name,campaign_id,is_organic
+03/15/2024 9:12 AM,John Doe,john@example.com,5550100,Meridian Ad,120334455,false
+03/16/2024 2:30 PM,Jane Smith,,555-0101,Eden Park Ad,120334456,false
+03/17/2024,N/A,invalid-email,not-a-phone,Test Ad,120334457,true

@@ -1,0 +1,110 @@
+{
+  "generatedAt": "2026-07-08T16:11:21.299Z",
+  "count": 26,
+  "files": [
+    {
+      "name": "01-facebook-leads-standard.csv",
+      "description": "facebook leads standard"
+    },
+    {
+      "name": "02-facebook-leads-messy-headers.csv",
+      "description": "facebook leads messy headers"
+    },
+    {
+      "name": "03-google-ads-leads.csv",
+      "description": "google ads leads"
+    },
+    {
+      "name": "04-google-ads-export-utf8.csv",
+      "description": "google ads export utf8"
+    },
+    {
+      "name": "05-excel-export.csv",
+      "description": "excel export"
+    },
+    {
+      "name": "06-agency-crm-export.csv",
+      "description": "agency crm export"
+    },
+    {
+      "name": "07-real-estate-crm.csv",
+      "description": "real estate crm"
+    },
+    {
+      "name": "08-broken-headers-typos.csv",
+      "description": "broken headers typos"
+    },
+    {
+      "name": "09-duplicate-headers.csv",
+      "description": "duplicate headers"
+    },
+    {
+      "name": "10-mixed-date-formats.csv",
+      "description": "mixed date formats"
+    },
+    {
+      "name": "11-international-names.csv",
+      "description": "international names"
+    },
+    {
+      "name": "12-unicode-emoji.csv",
+      "description": "unicode emoji"
+    },
+    {
+      "name": "13-mixed-languages.csv",
+      "description": "mixed languages"
+    },
+    {
+      "name": "14-blank-rows.csv",
+      "description": "blank rows"
+    },
+    {
+      "name": "15-duplicate-rows.csv",
+      "description": "duplicate rows"
+    },
+    {
+      "name": "16-messy-formatting.csv",
+      "description": "messy formatting"
+    },
+    {
+      "name": "17-formula-injection.csv",
+      "description": "formula injection"
+    },
+    {
+      "name": "18-international-phones.csv",
+      "description": "international phones"
+    },
+    {
+      "name": "19-empty-columns.csv",
+      "description": "empty columns"
+    },
+    {
+      "name": "20-tiny-two-row.csv",
+      "description": "tiny two row"
+    },
+    {
+      "name": "21-tab-separated.csv",
+      "description": "tab separated"
+    },
+    {
+      "name": "22-trailing-commas.csv",
+      "description": "trailing commas"
+    },
+    {
+      "name": "23-quoted-fields-multiline.csv",
+      "description": "quoted fields multiline"
+    },
+    {
+      "name": "24-salesforce-style.csv",
+      "description": "salesforce style"
+    },
+    {
+      "name": "25-hubspot-export.csv",
+      "description": "hubspot export"
+    },
+    {
+      "name": "26-large-dataset-200-rows.csv",
+      "description": "large dataset 200 rows"
+    }
+  ]
+}

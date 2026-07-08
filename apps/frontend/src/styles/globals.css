@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased scroll-smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgb(249 115 22 / 0.08), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 0%, rgb(249 115 22 / 0.05), transparent);
+  }
+
+  .dark body {
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgb(249 115 22 / 0.06), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 0%, rgb(249 115 22 / 0.04), transparent);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
