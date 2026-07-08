@@ -24,6 +24,8 @@ services:
         value: "0"
       - key: OPENROUTER_MODEL
         value: qwen/qwen-2.5-7b-instruct
+      - key: OPENROUTER_API_KEY
+        sync: false
       - key: OPENROUTER_BASE_URL
         value: https://openrouter.ai/api/v1
       - key: OPENROUTER_APP_NAME
