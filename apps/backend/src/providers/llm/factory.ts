@@ -6,6 +6,7 @@ import { ClaudeProvider } from './claude.provider.js';
 import { DemoLLMProvider } from './demo.provider.js';
 import { GeminiProvider } from './gemini.provider.js';
 import { OpenAIProvider } from './openai.provider.js';
+import { OpenRouterProvider } from './openrouter.provider.js';
 import type { LLMProvider } from './types.js';
 
 export function createLLMProvider(): LLMProvider {
@@ -47,6 +48,26 @@ export function createLLMProvider(): LLMProvider {
         timeoutMs,
       });
     }
+    case 'openrouter': {
+      if (!llmConfig.openrouter.apiKey) {
+        throw new ConfigurationError('OPENROUTER_API_KEY is required');
+      }
+      const openRouterOptions = {
+        apiKey: llmConfig.openrouter.apiKey,
+        model: llmConfig.openrouter.model,
+        baseUrl: llmConfig.openrouter.baseUrl,
+        appName: llmConfig.openrouter.appName,
+        maxRetries,
+        timeoutMs,
+      };
+      if (llmConfig.openrouter.siteUrl !== undefined) {
+        return new OpenRouterProvider({
+          ...openRouterOptions,
+          siteUrl: llmConfig.openrouter.siteUrl,
+        });
+      }
+      return new OpenRouterProvider(openRouterOptions);
+    }
     case 'mock':
       return new DemoLLMProvider();
     default: {
@@ -56,5 +77,5 @@ export function createLLMProvider(): LLMProvider {
   }
 }
 
-export { ClaudeProvider, DemoLLMProvider, OpenAIProvider, GeminiProvider };
+export { ClaudeProvider, DemoLLMProvider, OpenAIProvider, GeminiProvider, OpenRouterProvider };
 export type { LLMProvider, LLMProviderOptions } from './types.js';

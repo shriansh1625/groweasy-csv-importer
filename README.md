@@ -14,7 +14,7 @@
 git clone <your-repo-url>
 cd groweasy
 pnpm install
-cp .env.example .env    # mock mode — no API key needed
+cp .env.example .env    # add OPENROUTER_API_KEY (free Qwen via OpenRouter)
 pnpm dev
 ```
 
@@ -25,7 +25,7 @@ pnpm dev
 
 **Try it:** Upload `demo/csvs/01-facebook-leads-standard.csv` → click **Start AI Import** → watch live progress → inspect CRM results.
 
-> **No API key required.** Default `LLM_PROVIDER=mock` runs a heuristic demo engine locally. Switch to `anthropic`, `openai`, or `gemini` for real LLM extraction.
+> **Free AI by default.** Set `LLM_PROVIDER=openrouter` with a free [OpenRouter](https://openrouter.ai) key and `qwen/qwen-2.5-7b-instruct`. Use `mock` for offline demo without any API key.
 
 ---
 
@@ -178,22 +178,32 @@ pnpm doctor          # verify environment
 cp .env.example .env
 ```
 
-### Mock mode (default — no API key)
+### OpenRouter + Qwen (default — free)
+
+```env
+LLM_PROVIDER=openrouter
+OPENROUTER_API_KEY=sk-or-v1-...
+OPENROUTER_MODEL=qwen/qwen-2.5-7b-instruct
+```
+
+Get a free key at [openrouter.ai/keys](https://openrouter.ai/keys).
+
+### Mock mode (no API key)
 
 ```env
 LLM_PROVIDER=mock
 ```
 
-Runs locally with heuristic extraction. Perfect for reviewers and CI.
+Runs heuristic extraction locally — no network calls.
 
-### Production LLM mode
+### Paid providers
 
 ```env
 LLM_PROVIDER=anthropic
 ANTHROPIC_API_KEY=sk-ant-...
 ```
 
-Supported providers: `anthropic`, `openai`, `gemini`
+Supported providers: `openrouter`, `mock`, `anthropic`, `openai`, `gemini`
 
 See [`.env.example`](.env.example) for all variables.
 

@@ -14,9 +14,17 @@ services:
       - key: HOST
         value: 0.0.0.0
       - key: LLM_PROVIDER
-        value: mock
+        value: openrouter
       - key: LOG_LEVEL
         value: info
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: qwen/qwen-2.5-7b-instruct
+      - key: OPENROUTER_BASE_URL
+        value: https://openrouter.ai/api/v1
+      - key: OPENROUTER_APP_NAME
+        value: Civic Seva
       - key: CORS_ORIGIN
         sync: false
       - key: ANTHROPIC_API_KEY

@@ -5,7 +5,7 @@ import { ConfigurationError } from '@groweasy/shared';
 
 loadDotenv();
 
-const llmProviders = ['anthropic', 'openai', 'gemini', 'mock'] as const;
+const llmProviders = ['anthropic', 'openai', 'gemini', 'openrouter', 'mock'] as const;
 
 const envSchema = z
   .object({
@@ -19,7 +19,7 @@ const envSchema = z
     HOST: z.string().default('0.0.0.0'),
     CORS_ORIGIN: z.string().default('http://localhost:3000'),
 
-    LLM_PROVIDER: z.enum(llmProviders).default('anthropic'),
+    LLM_PROVIDER: z.enum(llmProviders).default('openrouter'),
 
     ANTHROPIC_API_KEY: z.string().optional(),
     ANTHROPIC_MODEL: z.string().default('claude-sonnet-4-20250514'),
@@ -29,6 +29,12 @@ const envSchema = z
 
     GEMINI_API_KEY: z.string().optional(),
     GEMINI_MODEL: z.string().default('gemini-2.0-flash'),
+
+    OPENROUTER_API_KEY: z.string().optional(),
+    OPENROUTER_MODEL: z.string().default('qwen/qwen-2.5-7b-instruct'),
+    OPENROUTER_BASE_URL: z.string().default('https://openrouter.ai/api/v1'),
+    OPENROUTER_APP_NAME: z.string().default('Civic Seva'),
+    OPENROUTER_SITE_URL: z.string().optional(),
 
     RATE_LIMIT_WINDOW_MS: z.coerce.number().int().positive().default(60_000),
     RATE_LIMIT_MAX_REQUESTS: z.coerce.number().int().positive().default(100),
@@ -56,6 +62,7 @@ const envSchema = z
       (env.LLM_PROVIDER === 'anthropic' && !env.ANTHROPIC_API_KEY && 'ANTHROPIC_API_KEY') ||
       (env.LLM_PROVIDER === 'openai' && !env.OPENAI_API_KEY && 'OPENAI_API_KEY') ||
       (env.LLM_PROVIDER === 'gemini' && !env.GEMINI_API_KEY && 'GEMINI_API_KEY') ||
+      (env.LLM_PROVIDER === 'openrouter' && !env.OPENROUTER_API_KEY && 'OPENROUTER_API_KEY') ||
       false;
 
     if (missingKey) {
@@ -145,6 +152,13 @@ export const config = {
       gemini: {
         apiKey: cfg.GEMINI_API_KEY,
         model: cfg.GEMINI_MODEL,
+      },
+      openrouter: {
+        apiKey: cfg.OPENROUTER_API_KEY,
+        model: cfg.OPENROUTER_MODEL,
+        baseUrl: cfg.OPENROUTER_BASE_URL,
+        appName: cfg.OPENROUTER_APP_NAME,
+        siteUrl: cfg.OPENROUTER_SITE_URL,
       },
     };
   },
